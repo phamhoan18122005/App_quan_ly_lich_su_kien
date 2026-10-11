@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- LIGHT -->
+    <color name="brand_primary">#4F46E5</color>
+    <color name="brand_primary_dark">#3730A3</color>
+    <color name="brand_primary_container">#E0E7FF</color>
+    <color name="on_primary">#FFFFFF</color>
+    <color name="bg_screen">#F4F5FD</color>
+    <color name="bg_surface">#FFFFFF</color>
+    <color name="bg_surface_variant">#F1F3FB</color>
+    <color name="text_primary">#0F172A</color>
+    <color name="text_secondary">#64748B</color>
+    <color name="stroke">#E2E8F0</color>
+    <color name="danger">#DC2626</color>
+    <color name="danger_container">#FEE2E2</color>
+    <color name="success">#059669</color>
+    <color name="success_container">#D1FAE5</color>
+    <color name="warning">#D97706</color>
+    <color name="warning_container">#FEF3C7</color>
+    <color name="scrim">#99000000</color>
+    <color name="hero_start">#4F46E5</color>
+    <color name="hero_end">#3730A3</color>
+    <color name="hero_glass">#26FFFFFF</color>
+    <color name="splash_start">#EEF0FF</color>
+    <color name="splash_end">#FFFFFF</color>
+    <color name="banner_bg">#1E293B</color>
+    <color name="accent_indigo">#4F46E5</color>
+    <color name="accent_green">#047857</color>
+    <color name="accent_red">#DC2626</color>
+    <color name="accent_teal">#0D9488</color>
+</resources>

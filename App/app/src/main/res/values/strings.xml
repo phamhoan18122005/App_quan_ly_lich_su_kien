@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">EventCal</string>
+    <string name="avatar_letter">A</string>
+
+    <!-- Điều hướng -->
+    <string name="nav_calendar">Lịch</string>
+    <string name="nav_upcoming">Sắp tới</string>
+    <string name="nav_create">Tạo sự kiện</string>
+    <string name="nav_filter">Bộ lọc</string>
+    <string name="nav_settings">Cài đặt</string>
+    <string name="action_search">Tìm kiếm</string>
+    <string name="action_notifications">Thông báo</string>
+    <string name="close">Đóng</string>
+    <string name="prev">Trước</string>
+    <string name="next">Sau</string>
+    <string name="cancel">Hủy</string>
+    <string name="all">Tất cả</string>
+    <string name="important">Quan trọng</string>
+
+    <!-- Splash -->
+    <string name="splash_badge">HỆ THỐNG LỊCH THÔNG MINH</string>
+    <string name="splash_tagline">Quản lý sự kiện &amp; lịch biểu cá nhân</string>
+    <string name="splash_loading">Đang khởi tạo lịch biểu...</string>
+    <string name="splash_security">BẢO MẬT &amp; ĐỒNG BỘ HÓA ĐÁM MÂY</string>
+    <string name="splash_version">PHIÊN BẢN 2.4.0 • MATERIAL YOU</string>
+
+    <!-- Lịch -->
+    <string name="mode_month">Tháng</string>
+    <string name="mode_week">Tuần</string>
+    <string name="mode_list">Danh sách</string>
+    <string name="today">Hôm nay</string>
+    <string name="dow_mon">T2</string>
+    <string name="dow_tue">T3</string>
+    <string name="dow_wed">T4</string>
+    <string name="dow_thu">T5</string>
+    <string name="dow_fri">T6</string>
+    <string name="dow_sat">T7</string>
+    <string name="dow_sun">CN</string>
+    <string name="event_done">Đã hoàn thành</string>
+    <string name="sample_month_year">Tháng 10, 2024</string>
+    <string name="sample_selected_day">Sự kiện ngày 24 Th10</string>
+    <string name="sample_3_events">3 sự kiện</string>
+
+    <!-- Sắp tới -->
+    <string name="timeline">DÒNG THỜI GIAN</string>
+    <string name="sample_upcoming_count">5 sự kiện từ hôm nay</string>
+    <string name="happening_now">ĐANG DIỄN RA</string>
+    <string name="alarm_on">Báo thức bật</string>
+    <string name="time">Thời gian</string>
+    <string name="place">Địa điểm</string>
+    <string name="progress">Tiến độ sự kiện</string>
+    <string name="view_detail">Xem chi tiết →</string>
+    <string name="sync_done">Lịch trình đã được đồng bộ hóa hoàn tất</string>
+    <string name="sample_hero_title">Buổi thuyết trình dự án Android SQLite</string>
+    <string name="sample_hero_desc">Đánh giá kiến trúc Database &amp; Tối ưu hóa truy vấn</string>
+    <string name="sample_hero_time">14:00 - 16:30</string>
+    <string name="sample_hero_place">Văn phòng công ty</string>
+    <string name="sample_percent">70% hoàn thành</string>
+
+    <!-- Danh mục -->
+    <string name="cat_work">Công việc</string>
+    <string name="cat_personal">Cá nhân</string>
+    <string name="cat_family">Gia đình</string>
+    <string name="cat_friends">Bạn bè</string>
+
+    <!-- Tạo / Sửa -->
+    <string name="edit_event">Chỉnh sửa sự kiện</string>
+    <string name="save_event">Lưu sự kiện</string>
+    <string name="field_title">Tiêu đề sự kiện *</string>
+    <string name="field_category">Danh mục sự kiện</string>
+    <string name="all_day">Cả ngày</string>
+    <string name="all_day_hint">Kết thúc 23:59 cùng ngày</string>
+    <string name="start">BẮT ĐẦU</string>
+    <string name="end">KẾT THÚC</string>
+    <string name="field_location">Địa điểm</string>
+    <string name="pick_on_map">Chọn để mở Google Maps</string>
+    <string name="field_reminder">Nhắc nhở sự kiện</string>
+    <string name="reminder_hint">Sử dụng Android AlarmManager chính xác từng phút</string>
+    <string name="remind_before">Thời gian nhắc trước</string>
+    <string name="rem_none">Không nhắc</string>
+    <string name="rem_1m">1 phút</string>
+    <string name="rem_5m">5 phút</string>
+    <string name="rem_10m">10 phút</string>
+    <string name="rem_30m">30 phút</string>
+    <string name="rem_1h">1 giờ</string>
+    <string name="rem_1d">1 ngày trước</string>
+    <string name="field_note">Mô tả ghi chú (tùy chọn)</string>
+    <string name="save_changes">Lưu thay đổi</string>
+    <string name="delete_this_event">Xóa sự kiện này</string>
+    <string name="sample_date">24/10/2024</string>
+    <string name="sample_start_time">09:00 AM</string>
+    <string name="sample_end_time">11:00 AM</string>
+    <string name="sample_attachment">Bao_cao_tong_ket_Q3_final.pdf</string>
+
+    <!-- Tìm kiếm & lọc -->
+    <string name="banner_app_line">EventCal • Vừa xong</string>
+    <string name="banner_title">Nhắc nhở: Họp báo cáo tiến độ tuần</string>
+    <string name="banner_body">Sự kiện sẽ bắt đầu lúc 10:00 (còn 30 phút) tại Phòng họp 3. Chạm để xem chi tiết.</string>
+    <string name="banner_view">Xem ngay →</string>
+    <string name="search_hint">Tìm kiếm sự kiện...</string>
+    <string name="search_sqlite_hint">Truy vấn SQLite: 3 kết quả phù hợp</string>
+    <string name="advanced_filter">Lọc nâng cao</string>
+    <string name="search_results">Kết quả tìm kiếm</string>
+    <string name="sort_by">Sắp xếp theo: Giờ bắt đầu</string>
+    <string name="selected_detail">CHI TIẾT SỰ KIỆN ĐÃ CHỌN</string>
+    <string name="edit_event_btn">Chỉnh sửa sự kiện</string>
+    <string name="delete_event_btn">Xóa sự kiện</string>
+    <string name="sample_detail_title">Họp báo cáo tiến độ tuần</string>
+    <string name="sample_detail_desc">Rà soát chi tiết tiến độ dự án, thảo gỡ điểm nghẽn và chốt danh sách deliverable.</string>
+    <string name="sample_detail_time">10:00 - 11:30 (90 phút)</string>
+    <string name="sample_detail_date">Hôm nay, 24 Tháng 10, 2024</string>
+    <string name="sample_detail_place">Phòng họp 3 • Tầng 2 Tòa nhà Tec</string>
+    <string name="sample_detail_reminder">Trước 30 phút (Android Push)</string>
+    <string name="sample_detail_people">5 người tham gia: Lan, Minh, Tuấn, An, Bạn</string>
+
+    <!-- Cài đặt -->
+    <string name="offline_badge">CƠ SỞ DỮ LIỆU SQLITE OFFLINE</string>
+    <string name="safe_local_storage">Lưu trữ cục bộ an toàn</string>
+    <string name="storage_info">Đã lưu 18 sự kiện trên bộ nhớ thiết bị. Mọi dữ liệu thuộc về bạn, không đồng bộ máy chủ bên thứ ba.</string>
+    <string name="db_size">Kích thước file db: 248 KB</string>
+    <string name="db_wal">Auto-wal SQLite</string>
+    <string name="sec_calendar_time">Lịch &amp; Thời gian</string>
+    <string name="week_start">Bắt đầu tuần từ</string>
+    <string name="monday_default">Thứ 2 (Mặc định)</string>
+    <string name="sunday">Chủ nhật</string>
+    <string name="default_view">Chế độ xem mặc định khi mở app</string>
+    <string name="time_format">Định dạng giờ</string>
+    <string name="fmt_24h">24 giờ (14:00)</string>
+    <string name="fmt_12h">12 giờ (02:00 PM)</string>
+    <string name="sec_theme">Giao diện ứng dụng (Theme)</string>
+    <string name="display_mode">Chế độ hiển thị</string>
+    <string name="theme_light">Sáng (Bật)</string>
+    <string name="theme_dark">Tối</string>
+    <string name="theme_auto">Tự động</string>
+    <string name="accent_color">Màu chủ đạo</string>
+    <string name="accent_default">Indigo (Mặc định)</string>
+    <string name="sec_notifications">Thông báo &amp; Nhắc nhở (AlarmManager)</string>
+    <string name="enable_alarm">Bật chuông thông báo</string>
+    <string name="enable_alarm_hint">Sử dụng Android Exact Alarm để đánh thức đúng giờ</string>
+    <string name="default_reminder">Thời gian nhắc mặc định</string>
+    <string name="default_reminder_hint">Tự động áp dụng cho lịch mới</string>
+    <string name="rem_30m_before">30 phút trước</string>
+    <string name="alarm_sound">Âm thanh thông báo</string>
+    <string name="alarm_sound_hint">Giai điệu mặc định Android (Chime ringtone)</string>
+    <string name="sec_data">Quản lý dữ liệu cục bộ (SQLite)</string>
+    <string name="backup_file">Sao lưu dữ liệu ra file</string>
+    <string name="backup_file_hint">Xuất file .sqlite / .json vào bộ nhớ máy</string>
+    <string name="restore_file">Khôi phục dữ liệu từ file</string>
+    <string name="restore_file_hint">Nhập lại lịch trình bạn đã sao lưu trước đó</string>
+    <string name="delete_all">Xóa toàn bộ sự kiện</string>
+    <string name="delete_all_hint">Xóa vĩnh viễn dữ liệu trong bảng SQLite</string>
+    <string name="app_version_line">EventCal Android v1.0.0 (Offline First)</string>
+    <string name="app_material_note">Tuân thủ tiêu chuẩn Material 3 &amp; SharedPreferences API</string>
+
+    <!-- Dialog -->
+    <string name="dlg_delete_title">Xóa sự kiện này?</string>
+    <string name="dlg_delete_message">Bạn có chắc chắn muốn xóa sự kiện này? Hành động này chỉ xóa sự kiện tại ngày đã chọn và không thể hoàn tác.</string>
+    <string name="sample_dlg_event">Họp chiến lược Q4</string>
+    <string name="sample_dlg_event_time">Thứ Năm, 24 Th10 • 09:30 - 11:00</string>
+    <string name="dlg_all_title">Xóa toàn bộ sự kiện?</string>
+    <string name="dlg_all_warning">CẢNH BÁO: Thao tác này sẽ xóa vĩnh viễn TOÀN BỘ dữ liệu sự kiện, lịch biểu và lời nhắc đã tạo trên thiết bị này. Dữ liệu sau khi xóa sẽ KHÔNG thể khôi phục được!</string>
+    <string name="impact_scope">PHẠM VI TÁC ĐỘNG</string>
+    <string name="sample_total_128">Tổng cộng: 128 sự kiện</string>
+    <string name="sample_across_categories">Trải rộng trong 6 danh mục đã phân loại</string>
+    <string name="keep_data">Hủy bỏ, giữ lại dữ liệu</string>
+    <string name="delete_all_events">Xóa toàn bộ sự kiện</string>
+    <string name="irreversible_note">Hành động không thể hoàn tác sau khi bấm xác nhận</string>
+</resources>

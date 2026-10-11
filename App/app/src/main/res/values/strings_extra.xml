@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="cat_health">Sức khỏe</string>
+    <string name="cat_other">Khác</string>
+    <string name="event_detail">Chi tiết sự kiện</string>
+    <string name="no_events">Không có sự kiện nào</string>
+</resources>

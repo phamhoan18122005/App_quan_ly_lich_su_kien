@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_screen">
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scroll"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:clipToPadding="false"
+        android:fillViewport="true"
+        android:scrollbars="none"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_max="@dimen/content_max_width">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/screen_padding">
+
+            <!-- Tháng / Tuần / Danh sách -->
+            <com.google.android.material.button.MaterialButtonToggleGroup
+                android:id="@+id/toggleViewMode"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:checkedButton="@id/btnModeMonth"
+                app:selectionRequired="true"
+                app:singleSelection="true">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnModeMonth"
+                    style="@style/Toggle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/mode_month" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnModeWeek"
+                    style="@style/Toggle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/mode_week" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnModeList"
+                    style="@style/Toggle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/mode_list" />
+            </com.google.android.material.button.MaterialButtonToggleGroup>
+
+            <!-- Lịch tháng -->
+            <com.google.android.material.card.MaterialCardView android:id="@+id/cardCalendar"
+                style="@style/Card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="12dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/tvMonthYear"
+                            style="@style/Text.BodyBold"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:drawablePadding="4dp"
+                            android:gravity="center_vertical"
+                            android:text="@string/sample_month_year"
+                            android:textSize="16sp"
+                            app:drawableEndCompat="@drawable/ic_expand_more"
+                            app:drawableTint="@color/text_secondary" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btnToday"
+                            style="@style/Widget.Material3.Button.TonalButton"
+                            android:layout_width="wrap_content"
+                            android:layout_height="36dp"
+                            android:insetTop="0dp"
+                            android:insetBottom="0dp"
+                            android:text="@string/today"
+                            android:textSize="12sp"
+                            app:backgroundTint="@color/brand_primary_container"
+                            android:textColor="@color/brand_primary" />
+
+                        <ImageButton
+                            android:id="@+id/btnPrevMonth"
+                            style="@style/IconButton"
+                            android:contentDescription="@string/prev"
+                            android:src="@drawable/ic_chevron_left" />
+
+                        <ImageButton
+                            android:id="@+id/btnNextMonth"
+                            style="@style/IconButton"
+                            android:contentDescription="@string/next"
+                            android:src="@drawable/ic_chevron_right" />
+                    </LinearLayout>
+
+                    <!-- Tên thứ -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:orientation="horizontal">
+
+                        <TextView android:id="@+id/dow0" style="@style/Text.Secondary" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:text="@string/dow_mon" />
+                        <TextView android:id="@+id/dow1" style="@style/Text.Secondary" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:text="@string/dow_tue" />
+                        <TextView android:id="@+id/dow2" style="@style/Text.Secondary" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:text="@string/dow_wed" />
+                        <TextView android:id="@+id/dow3" style="@style/Text.Secondary" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:text="@string/dow_thu" />
+                        <TextView android:id="@+id/dow4" style="@style/Text.Secondary" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:text="@string/dow_fri" />
+                        <TextView android:id="@+id/dow5" style="@style/Text.Secondary" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:text="@string/dow_sat" />
+                        <TextView android:id="@+id/dow6" style="@style/Text.Secondary" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:text="@string/dow_sun"  />
+                    </LinearLayout>
+
+                    <!-- Lưới ngày: 7 cột, adapter dùng item_calendar_day -->
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rvCalendarDays"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:nestedScrollingEnabled="false"
+                        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                        app:spanCount="7"
+                        tools:itemCount="35"
+                        tools:listitem="@layout/item_calendar_day" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Sự kiện của ngày đang chọn -->
+            <LinearLayout android:id="@+id/rowDayHeader"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingTop="16dp"
+                android:paddingBottom="8dp">
+
+                <TextView
+                    android:id="@+id/tvSelectedDay"
+                    style="@style/Text.BodyBold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/sample_selected_day"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/tvSelectedCount"
+                    style="@style/Tag.Primary"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:text="@string/sample_3_events" />
+
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="1" />
+
+                <ImageButton
+                    android:id="@+id/btnDayFilter"
+                    style="@style/IconButton"
+                    android:contentDescription="@string/nav_filter"
+                    android:src="@drawable/ic_filter" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tvEmptyDay"
+                style="@style/Text.Secondary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="24dp"
+                android:text="@string/no_events"
+                android:visibility="gone" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvDayEvents"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:nestedScrollingEnabled="false"
+                android:paddingBottom="72dp"
+                android:clipToPadding="false"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:itemCount="3"
+                tools:listitem="@layout/item_event" />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

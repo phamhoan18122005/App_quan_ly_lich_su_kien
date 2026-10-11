@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_screen"
+    android:fitsSystemWindows="true">
+
+    <LinearLayout
+        android:id="@+id/editBar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/bg_surface"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingHorizontal="8dp"
+        android:paddingVertical="6dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageButton
+            android:id="@+id/btnClose"
+            style="@style/IconButton"
+            android:contentDescription="@string/close"
+            android:src="@drawable/ic_close" />
+
+        <TextView
+            android:id="@+id/tvEditTitle"
+            style="@style/Text.BodyBold"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_weight="1"
+            android:text="@string/edit_event"
+            android:textSize="16sp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnSaveTop"
+            style="@style/Button.Primary"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:text="@string/save_event" />
+    </LinearLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scroll"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:clipToPadding="false"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/editBar"
+        app:layout_constraintWidth_max="@dimen/content_max_width">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/screen_padding">
+
+            <!-- Tiêu đề -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilTitle"
+                style="@style/TextInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/field_title"
+                app:endIconMode="clear_text">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textCapSentences"
+                    android:maxLines="2" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Danh mục -->
+            <TextView
+                style="@style/Text.Section"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/field_category" />
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:scrollbars="none">
+
+                <com.google.android.material.chip.ChipGroup
+                    android:id="@+id/chipGroupCategory"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:selectionRequired="true"
+                    app:singleLine="true"
+                    app:singleSelection="true">
+
+                    <com.google.android.material.chip.Chip android:id="@+id/chipWork" style="@style/Chip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/cat_work" />
+                    <com.google.android.material.chip.Chip android:id="@+id/chipPersonal" style="@style/Chip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/cat_personal" />
+                    <com.google.android.material.chip.Chip android:id="@+id/chipFamily" style="@style/Chip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/cat_family" />
+                    <com.google.android.material.chip.Chip android:id="@+id/chipFriends" style="@style/Chip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/cat_friends" />
+                    <com.google.android.material.chip.Chip android:id="@+id/chipHealth" style="@style/Chip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/cat_health" />
+                    <com.google.android.material.chip.Chip android:id="@+id/chipOther" style="@style/Chip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/cat_other" />
+                </com.google.android.material.chip.ChipGroup>
+            </HorizontalScrollView>
+
+            <!-- Thời gian -->
+            <com.google.android.material.card.MaterialCardView
+                style="@style/Card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="@dimen/card_padding">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <ImageView android:layout_width="36dp" android:layout_height="36dp" android:background="@drawable/bg_circle_primary_container" android:contentDescription="@null" android:padding="8dp" android:src="@drawable/ic_calendar" app:tint="@color/brand_primary" />
+
+                        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_marginStart="10dp" android:layout_weight="1" android:orientation="vertical">
+                            <TextView style="@style/Text.BodyBold" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/all_day" />
+                            <TextView style="@style/Text.Secondary" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/all_day_hint" />
+                        </LinearLayout>
+
+                        <com.google.android.material.materialswitch.MaterialSwitch
+                            android:id="@+id/switchAllDay"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+                    </LinearLayout>
+
+                    <!-- BẮT ĐẦU -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:background="@drawable/bg_info_box"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:padding="10dp">
+
+                        <TextView style="@style/Text.Section" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="@string/start" />
+                        <TextView android:id="@+id/tvStartDate" style="@style/Text.BodyBold" android:layout_width="wrap_content" android:layout_height="wrap_content" android:background="@drawable/bg_pill_primary" android:paddingHorizontal="10dp" android:paddingVertical="6dp" android:text="@string/sample_date" android:textColor="@color/brand_primary" />
+                        <TextView android:id="@+id/tvStartTime" style="@style/Text.BodyBold" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="6dp" android:background="@drawable/bg_pill_primary" android:paddingHorizontal="10dp" android:paddingVertical="6dp" android:text="@string/sample_start_time" android:textColor="@color/brand_primary" />
+                    </LinearLayout>
+
+                    <!-- KẾT THÚC -->
+                    <LinearLayout android:id="@+id/rowEnd"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:background="@drawable/bg_info_box"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:padding="10dp">
+
+                        <TextView style="@style/Text.Section" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="@string/end" />
+                        <TextView android:id="@+id/tvEndDate" style="@style/Text.BodyBold" android:layout_width="wrap_content" android:layout_height="wrap_content" android:background="@drawable/bg_pill_primary" android:paddingHorizontal="10dp" android:paddingVertical="6dp" android:text="@string/sample_date" android:textColor="@color/brand_primary" />
+                        <TextView android:id="@+id/tvEndTime" style="@style/Text.BodyBold" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="6dp" android:background="@drawable/bg_pill_primary" android:paddingHorizontal="10dp" android:paddingVertical="6dp" android:text="@string/sample_end_time" android:textColor="@color/brand_primary" />
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Địa điểm -->
+            <TextView
+                style="@style/Text.Section"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/field_location" />
+
+            <com.google.android.material.card.MaterialCardView
+                style="@style/Card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp">
+
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="12dp">
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/TextInput"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/field_location"
+                        app:startIconDrawable="@drawable/ic_location"
+                        app:startIconTint="@color/danger">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etLocation"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="textPostalAddress" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <!-- Vùng xem trước bản đồ -->
+                    <FrameLayout
+                        android:id="@+id/mapPreview"
+                        android:layout_width="match_parent"
+                        android:layout_height="140dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/bg_map_placeholder">
+                        <TextView
+                            style="@style/Text.Secondary"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:drawablePadding="6dp"
+                            android:gravity="center"
+                            android:text="@string/pick_on_map"
+                            app:drawableTopCompat="@drawable/ic_location"
+                            app:drawableTint="@color/brand_primary" />
+                    </FrameLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Nhắc nhở -->
+            <com.google.android.material.card.MaterialCardView
+                style="@style/Card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp">
+
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="@dimen/card_padding">
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center_vertical" android:orientation="horizontal">
+                        <ImageView android:layout_width="36dp" android:layout_height="36dp" android:background="@drawable/bg_circle_primary_container" android:contentDescription="@null" android:padding="8dp" android:src="@drawable/ic_bell" app:tint="@color/brand_primary" />
+                        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_marginStart="10dp" android:layout_weight="1" android:orientation="vertical">
+                            <TextView style="@style/Text.BodyBold" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/field_reminder" />
+                            <TextView style="@style/Text.Secondary" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/reminder_hint" android:textColor="@color/brand_primary" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <TextView style="@style/Text.Section" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="12dp" android:text="@string/remind_before" />
+
+                    <!-- Tự xuống dòng theo bề rộng màn hình -->
+                    <com.google.android.material.chip.ChipGroup
+                        android:id="@+id/chipGroupReminder"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        app:chipSpacingHorizontal="8dp"
+                        app:selectionRequired="true"
+                        app:singleSelection="true">
+
+                        <com.google.android.material.chip.Chip android:id="@+id/rem0" style="@style/Chip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/rem_none" />
+                        <com.google.android.material.chip.Chip android:id="@+id/rem1" style="@style/Chip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/rem_1m" />
+                        <com.google.android.material.chip.Chip android:id="@+id/rem5" style="@style/Chip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/rem_5m" />
+                        <com.google.android.material.chip.Chip android:id="@+id/rem10" style="@style/Chip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/rem_10m" />
+                        <com.google.android.material.chip.Chip android:id="@+id/rem30" style="@style/Chip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/rem_30m" />
+                        <com.google.android.material.chip.Chip android:id="@+id/rem60" style="@style/Chip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/rem_1h" />
+                        <com.google.android.material.chip.Chip android:id="@+id/rem1440" style="@style/Chip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/rem_1d" />
+                    </com.google.android.material.chip.ChipGroup>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Ghi chú -->
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/TextInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:hint="@string/field_note">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etNote"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="top"
+                    android:inputType="textMultiLine|textCapSentences"
+                    android:minLines="3" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Tệp đính kèm -->
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipAttachment"
+                style="@style/Widget.Material3.Chip.Assist"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/sample_attachment"
+                app:chipBackgroundColor="@color/bg_surface_variant"
+                app:chipIcon="@drawable/ic_attach"
+                app:chipIconTint="@color/brand_primary"
+                app:closeIconEnabled="true" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnSave"
+                style="@style/Button.Primary"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_marginTop="20dp"
+                android:text="@string/save_changes" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnDelete"
+                style="@style/Button.DangerTonal"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="16dp"
+                android:text="@string/delete_this_event"
+                app:icon="@drawable/ic_delete" />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

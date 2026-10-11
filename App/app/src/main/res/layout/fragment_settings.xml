@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_screen">
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scroll"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:clipToPadding="false"
+        android:fillViewport="true"
+        android:scrollbars="none"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_max="@dimen/content_max_width">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/screen_padding">
+
+            <!-- Lưu trữ cục bộ -->
+            <com.google.android.material.card.MaterialCardView style="@style/Card" android:layout_width="match_parent" android:layout_height="wrap_content">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="@dimen/card_padding">
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center_vertical" android:orientation="horizontal">
+                        <TextView style="@style/Tag.Primary" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="@string/offline_badge" />
+                        <ImageView android:layout_width="20dp" android:layout_height="20dp" android:contentDescription="@null" android:src="@drawable/ic_shield" app:tint="@color/success" />
+                    </LinearLayout>
+                    <TextView style="@style/Text.BodyBold" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:text="@string/safe_local_storage" android:textSize="16sp" />
+                    <TextView android:id="@+id/tvStorageInfo" style="@style/Text.Secondary" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="4dp" android:text="@string/storage_info" />
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:background="@drawable/bg_info_box" android:gravity="center_vertical" android:orientation="horizontal" android:padding="10dp">
+                        <TextView android:id="@+id/tvDbSize" style="@style/Text.Secondary" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="@string/db_size" />
+                        <TextView style="@style/Tag.Primary" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/db_wal" />
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Lịch & thời gian -->
+            <TextView style="@style/Text.Section" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="18dp" android:text="@string/sec_calendar_time" />
+            <com.google.android.material.card.MaterialCardView style="@style/Card" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="@dimen/card_padding">
+
+                    <TextView style="@style/Text.Secondary" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/week_start" />
+                    <com.google.android.material.button.MaterialButtonToggleGroup android:id="@+id/toggleWeekStart" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="6dp" app:checkedButton="@id/btnMonday" app:selectionRequired="true" app:singleSelection="true">
+                        <com.google.android.material.button.MaterialButton android:id="@+id/btnMonday" style="@style/Toggle" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="@string/monday_default" />
+                        <com.google.android.material.button.MaterialButton android:id="@+id/btnSunday" style="@style/Toggle" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="@string/sunday" />
+                    </com.google.android.material.button.MaterialButtonToggleGroup>
+
+                    <TextView style="@style/Text.Secondary" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="14dp" android:text="@string/default_view" />
+                    <com.google.android.material.button.MaterialButtonToggleGroup android:id="@+id/toggleDefaultView" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="6dp" app:checkedButton="@id/btnViewMonth" app:selectionRequired="true" app:singleSelection="true">
+                        <com.google.android.material.button.MaterialButton android:id="@+id/btnViewMonth" style="@style/Toggle" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="@string/mode_month" />
+                        <com.google.android.material.button.MaterialButton android:id="@+id/btnViewWeek" style="@style/Toggle" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="@string/mode_week" />
+                        <com.google.android.material.button.MaterialButton android:id="@+id/btnViewList" style="@style/Toggle" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="@string/mode_list" />
+                    </com.google.android.material.button.MaterialButtonToggleGroup>
+
+                    <TextView style="@style/Text.Secondary" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="14dp" android:text="@string/time_format" />
+                    <com.google.android.material.button.MaterialButtonToggleGroup android:id="@+id/toggleTimeFormat" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="6dp" app:checkedButton="@id/btn24h" app:selectionRequired="true" app:singleSelection="true">
+                        <com.google.android.material.button.MaterialButton android:id="@+id/btn24h" style="@style/Toggle" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="@string/fmt_24h" />
+                        <com.google.android.material.button.MaterialButton android:id="@+id/btn12h" style="@style/Toggle" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="@string/fmt_12h" />
+                    </com.google.android.material.button.MaterialButtonToggleGroup>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Giao diện: Sáng / Tối / Tự động -->
+            <TextView style="@style/Text.Section" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="18dp" android:text="@string/sec_theme" />
+            <com.google.android.material.card.MaterialCardView style="@style/Card" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="@dimen/card_padding">
+
+                    <TextView style="@style/Text.Secondary" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/display_mode" />
+                    <com.google.android.material.button.MaterialButtonToggleGroup android:id="@+id/toggleTheme" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="6dp" app:checkedButton="@id/btnThemeAuto" app:selectionRequired="true" app:singleSelection="true">
+                        <com.google.android.material.button.MaterialButton android:id="@+id/btnThemeLight" style="@style/Toggle" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="@string/theme_light" />
+                        <com.google.android.material.button.MaterialButton android:id="@+id/btnThemeDark" style="@style/Toggle" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="@string/theme_dark" />
+                        <com.google.android.material.button.MaterialButton android:id="@+id/btnThemeAuto" style="@style/Toggle" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="@string/theme_auto" />
+                    </com.google.android.material.button.MaterialButtonToggleGroup>
+
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="14dp" android:orientation="horizontal">
+                        <TextView style="@style/Text.Secondary" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="@string/accent_color" />
+                        <TextView style="@style/Text.Secondary" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/accent_default" android:textColor="@color/brand_primary" android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:orientation="horizontal">
+                        <View android:id="@+id/accentIndigo" android:layout_width="40dp" android:layout_height="40dp" android:layout_marginEnd="12dp" android:background="@drawable/bg_accent_indigo" />
+                        <View android:id="@+id/accentGreen" android:layout_width="40dp" android:layout_height="40dp" android:layout_marginEnd="12dp" android:background="@drawable/bg_accent_green" />
+                        <View android:id="@+id/accentRed" android:layout_width="40dp" android:layout_height="40dp" android:layout_marginEnd="12dp" android:background="@drawable/bg_accent_red" />
+                        <View android:id="@+id/accentTeal" android:layout_width="40dp" android:layout_height="40dp" android:background="@drawable/bg_accent_teal" />
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Thông báo & nhắc nhở -->
+            <TextView style="@style/Text.Section" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="18dp" android:text="@string/sec_notifications" />
+            <com.google.android.material.card.MaterialCardView style="@style/Card" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="@dimen/card_padding">
+
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center_vertical" android:orientation="horizontal">
+                        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical">
+                            <TextView style="@style/Text.BodyBold" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/enable_alarm" />
+                            <TextView style="@style/Text.Secondary" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/enable_alarm_hint" />
+                        </LinearLayout>
+                        <com.google.android.material.materialswitch.MaterialSwitch android:id="@+id/switchAlarm" android:layout_width="wrap_content" android:layout_height="wrap_content" android:checked="true" />
+                    </LinearLayout>
+
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="14dp" android:gravity="center_vertical" android:orientation="horizontal">
+                        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical">
+                            <TextView style="@style/Text.BodyBold" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/default_reminder" />
+                            <TextView style="@style/Text.Secondary" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/default_reminder_hint" />
+                        </LinearLayout>
+                        <TextView android:id="@+id/tvDefaultReminder" style="@style/Text.Body" android:layout_width="wrap_content" android:layout_height="wrap_content" android:background="@drawable/bg_pill" android:drawablePadding="4dp" android:gravity="center_vertical" android:paddingHorizontal="12dp" android:paddingVertical="8dp" android:text="@string/rem_30m_before" app:drawableEndCompat="@drawable/ic_expand_more" app:drawableTint="@color/text_secondary" />
+                    </LinearLayout>
+
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="14dp" android:gravity="center_vertical" android:orientation="horizontal">
+                        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical">
+                            <TextView style="@style/Text.BodyBold" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/alarm_sound" />
+                            <TextView style="@style/Text.Secondary" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/alarm_sound_hint" />
+                        </LinearLayout>
+                        <ImageView android:id="@+id/btnPickSound" android:layout_width="36dp" android:layout_height="36dp" android:background="@drawable/bg_circle_surface" android:contentDescription="@string/alarm_sound" android:padding="8dp" android:src="@drawable/ic_volume" app:tint="@color/text_secondary" />
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Quản lý dữ liệu -->
+            <TextView style="@style/Text.Section" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="18dp" android:text="@string/sec_data" />
+            <com.google.android.material.card.MaterialCardView style="@style/Card" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="8dp">
+
+                    <LinearLayout android:id="@+id/rowBackup" android:layout_width="match_parent" android:layout_height="wrap_content" android:background="?attr/selectableItemBackground" android:gravity="center_vertical" android:orientation="horizontal" android:padding="8dp">
+                        <ImageView android:layout_width="36dp" android:layout_height="36dp" android:background="@drawable/bg_circle_primary_container" android:contentDescription="@null" android:padding="8dp" android:src="@drawable/ic_download" app:tint="@color/brand_primary" />
+                        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_marginStart="10dp" android:layout_weight="1" android:orientation="vertical">
+                            <TextView style="@style/Text.BodyBold" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/backup_file" />
+                            <TextView style="@style/Text.Secondary" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/backup_file_hint" />
+                        </LinearLayout>
+                        <ImageView android:layout_width="20dp" android:layout_height="20dp" android:contentDescription="@null" android:src="@drawable/ic_chevron_right" app:tint="@color/text_secondary" />
+                    </LinearLayout>
+
+                    <LinearLayout android:id="@+id/rowRestore" android:layout_width="match_parent" android:layout_height="wrap_content" android:background="?attr/selectableItemBackground" android:gravity="center_vertical" android:orientation="horizontal" android:padding="8dp">
+                        <ImageView android:layout_width="36dp" android:layout_height="36dp" android:background="@drawable/bg_circle_surface" android:contentDescription="@null" android:padding="8dp" android:src="@drawable/ic_restore" app:tint="@color/text_secondary" />
+                        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_marginStart="10dp" android:layout_weight="1" android:orientation="vertical">
+                            <TextView style="@style/Text.BodyBold" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/restore_file" />
+                            <TextView style="@style/Text.Secondary" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/restore_file_hint" />
+                        </LinearLayout>
+                        <ImageView android:layout_width="20dp" android:layout_height="20dp" android:contentDescription="@null" android:src="@drawable/ic_chevron_right" app:tint="@color/text_secondary" />
+                    </LinearLayout>
+
+                    <LinearLayout android:id="@+id/rowDeleteAll" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="4dp" android:background="@drawable/bg_tag_danger" android:gravity="center_vertical" android:orientation="horizontal" android:padding="10dp">
+                        <ImageView android:layout_width="36dp" android:layout_height="36dp" android:background="@drawable/bg_circle_danger" android:contentDescription="@null" android:padding="8dp" android:src="@drawable/ic_delete" app:tint="@color/danger" />
+                        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_marginStart="10dp" android:layout_weight="1" android:orientation="vertical">
+                            <TextView style="@style/Text.BodyBold" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/delete_all" android:textColor="@color/danger" />
+                            <TextView style="@style/Text.Secondary" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/delete_all_hint" />
+                        </LinearLayout>
+                        <ImageView android:layout_width="20dp" android:layout_height="20dp" android:contentDescription="@null" android:src="@drawable/ic_warning" app:tint="@color/danger" />
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <TextView style="@style/Text.Secondary" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="center_horizontal" android:layout_marginTop="16dp" android:background="@drawable/bg_pill" android:paddingHorizontal="12dp" android:paddingVertical="6dp" android:text="@string/app_version_line" android:textSize="11sp" />
+            <TextView style="@style/Text.Secondary" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="center_horizontal" android:layout_marginTop="6dp" android:layout_marginBottom="72dp" android:text="@string/app_material_note" android:textSize="10sp" />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
